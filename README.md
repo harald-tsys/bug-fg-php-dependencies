@@ -45,7 +45,7 @@ Create new function with following values:
 - Function Name: **bug-php-multiple-deps**
 - Runtime: **PHP 8.3**
 
-In code tab paste code from ```fg/index.php```
+In code tab paste code from [fg/index.php](fg/index.php)
 
 In **Dependencies** add following **Private** dependencies with **version 1**:
 
