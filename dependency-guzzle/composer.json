@@ -1,0 +1,18 @@
+{
+  "name": "opentelekomcloud-community/guzzle-php",
+  "description": "OBS dependency",
+  "type": "library",
+  "license": "Apache-2.0",
+  "require": {
+    "guzzlehttp/guzzle": "^7.0" 
+  },
+  "archive": {
+    "exclude": [
+      "Makefile"
+    ]
+  },
+  "config": {
+    "archive-format": "zip",
+    "sort-packages": true
+  }
+}
