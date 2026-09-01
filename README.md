@@ -120,12 +120,6 @@ The array in this file should also include:
 
 ## Problem
 
-It seems that 
-
-```bash 
-composer update
-```
-
-is not run correctly if multiple dependencies are added to FunctionGraph
-
+It seems that if adding multiple dependencies to a FunctionGraph,
+they are extracted but not merged together in the ```/vendor/composer/autoload*.php``` files.
 
