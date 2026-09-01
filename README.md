@@ -69,7 +69,7 @@ Following error will occur:
     "errorType": "EXCEPTION",
     "stackTrace": {
         "file": "/index.php",
-        "line": 53
+        "line": 47
     }
 }
 ```

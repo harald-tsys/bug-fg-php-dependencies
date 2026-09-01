@@ -18,11 +18,8 @@ function ListDependenciesHandler($event, $context)
   $dir = new DirectoryIterator($path);
 
   foreach ($dir as $file) {
-    $fname = $file->getFilename();
-
-    $logger->info('Found file: ' . $file->getPathname());    
+    $logger->info($file->getPathname());
   }
-
 }
 
 function DisplayFileHandler($event, $context)
@@ -38,8 +35,6 @@ function DisplayFileHandler($event, $context)
   } else {
     $logger->info('File not found: ' . $path);
   }
-
-  
 }
 
 
@@ -64,7 +59,6 @@ function handler($event, $context)
     ],
     'isBase64Encoded' => false,
     'body' => json_encode($event),
-    'localDate' => LocalDate::now(TimeZone::utc()),
   ];
 
   return $output;
