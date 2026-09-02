@@ -8,5 +8,8 @@ create_dependency-guzzle:
 
 create_dependencies: create_dependency-brick-date-time create_dependency-guzzle
 
+create_package:
+	cd fg && \
+	make create_package
 
-.PHONY: create_dependency-brick-date-time create_dependency-guzzle create_dependencies
+.PHONY: create_dependency-brick-date-time create_dependency-guzzle create_dependencies create_package
