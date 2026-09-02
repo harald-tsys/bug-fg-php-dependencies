@@ -12,4 +12,8 @@ create_package:
 	cd fg && \
 	make create_package
 
-.PHONY: create_dependency-brick-date-time create_dependency-guzzle create_dependencies create_package
+create_package_workaround:
+	cd fg && \
+	make create_package
+
+.PHONY: create_dependency-brick-date-time create_dependency-guzzle create_dependencies create_package create_package_workaround
