@@ -1,12 +1,27 @@
 <?php
 
-namespace PackageLoader;
+namespace FGDependenciesLoader;
 
-class PackageLoader
+class FGDependenciesLoader
 {
+  // Array to keep track of loaded dependencies
+  private $loaded = array();
 
-  public function loadVendor($path)
+  function __construct()
   {
+    $this->loadDependencies();
+  }
+
+  // Get the list of loaded dependencies
+  public function getLoaded()
+  {
+    return $this->loaded;
+  }
+
+  private function loadDependencies()
+  {
+    // FunctionGraph dependencies are unpacked in the vendor directory under the runtime code root
+    $path = getenv('RUNTIME_CODE_ROOT') . "/vendor";
     $composerDirectory = rtrim($path, "/") . "/composer";
 
     // iterate through all directories recursively, ignoring the /composer folder
@@ -32,7 +47,14 @@ class PackageLoader
   // register autoloaders for PSR-4, PSR-0, and files.
   private function load($dir)
   {
+    
     $composer = json_decode(file_get_contents($dir . "/composer.json"), 1);
+
+    if (isset($composer["name"])) {
+      array_push($this->loaded, $composer["name"]);
+    } else {
+      array_push($this->loaded, substr($dir, strlen(getenv('RUNTIME_CODE_ROOT')) + 1));
+    }
 
     if (isset($composer["autoload"]["psr-4"])) {
       $this->loadPSR($dir, $composer['autoload']['psr-4'], true);

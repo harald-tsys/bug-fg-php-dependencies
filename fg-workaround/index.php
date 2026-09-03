@@ -1,9 +1,7 @@
 <?php
 
-include __DIR__.'/PackageLoader.php';
-$loader = new \PackageLoader\PackageLoader();
-
-$loader->loadVendor(__DIR__ . "/vendor");
+include __DIR__.'/FGDependenciesLoader.php';
+$loader = new \FGDependenciesLoader\FGDependenciesLoader();
 
 use GuzzleHttp\Client;
 use GuzzleHttp\Psr7\Request;
@@ -14,9 +12,12 @@ use Brick\DateTime\TimeZone;
 
 function handler($event, $context)
 {
+  global $loader;
+
   $logger = $context->getLogger();
 
   $logger->info('Function name: ' . $context->getFunctionName());
+  $logger->info("FGDependenciesLoader loaded dependencies: " . implode(", ", $loader->getLoaded()));
 
   $logger->info('Local date: ' . LocalDate::now(TimeZone::utc()));
 
