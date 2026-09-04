@@ -14,6 +14,6 @@
   "config": {
     "archive-format": "zip",
     "sort-packages": true,
-    "vendor-dir": "vendor_guzzle-php"
+    "vendor-dir": "vendor_guzzle"
   }
 }

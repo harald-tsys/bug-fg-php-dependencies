@@ -11,8 +11,8 @@ if (file_exists(__DIR__ . '/vendor_brick-date-time/autoload.php')) {
 }
 
 # FG dependency "guzzle-php" autoloading 
-if (file_exists(__DIR__ . '/vendor_guzzle-php/autoload.php')) {
-    require_once __DIR__ . '/vendor_guzzle-php/autoload.php';
+if (file_exists(__DIR__ . '/vendor_guzzle/autoload.php')) {
+    require_once __DIR__ . '/vendor_guzzle/autoload.php';
 }
 
 use GuzzleHttp\Client;
