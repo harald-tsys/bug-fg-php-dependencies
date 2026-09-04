@@ -8,3 +8,4 @@ build/
 utils/
 tox.ini
 dependencies/
+vendor_*/
